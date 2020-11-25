@@ -46,12 +46,12 @@ $responseJson = json_decode($response);
         <h1>결제 성공</h1>
         <h3>상품명: 토스 티셔츠</h3>
         <h3>결과 데이터: <?php echo json_encode($responseJson, JSON_UNESCAPED_UNICODE); ?></h3>
-    <?php
+        <?php
     } else { ?>
         <h1>결제 실패</h1>
         <p><?php echo $responseJson->message ?></p>
         <span>에러코드: <?php echo $responseJson->code ?></span>
-    <?php
+        <?php
     }
     ?>
 

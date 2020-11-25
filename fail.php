@@ -1,13 +1,13 @@
 <?php
-    $message = $_GET['message'];
-    $code = $_GET['code'];
+$message = $_GET['message'];
+$code = $_GET['code'];
 ?>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <title>결제 실패</title>
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
 <body>
