@@ -47,7 +47,7 @@ $responseJson = json_decode($response);
         <?php
     } else { ?>
         <h1>빌링키 발급 실패</h1>
-        <p><?php echo $responseJson->mes패sage ?></p>
+        <p><?php echo $responseJson->message ?></p>
         <span>에러코드: <?php echo $responseJson->code ?></span>
         <?php
     }
