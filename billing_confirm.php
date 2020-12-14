@@ -1,14 +1,13 @@
 <?php
 
-$paymentKey = $_GET['paymentKey'];
-$orderId = $_GET['orderId'];
-$amount = $_GET['amount'];
+$customerKey = $_GET['customerKey'];
+$authKey = $_GET['authKey'];
 
 $secretKey = 'test_ak_ZORzdMaqN3wQd5k6ygr5AkYXQGwy';
 
-$url = 'https://api.tosspayments.com/v1/payments/' . $paymentKey;
+$url = 'https://api.tosspayments.com/v1/billing/authorizations/' . $authKey;
 
-$data = ['orderId' => $orderId, 'amount' => $amount];
+$data = ['customerKey' => $customerKey];
 
 $credential = base64_encode($secretKey . ':');
 
@@ -35,7 +34,7 @@ $responseJson = json_decode($response);
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>결제 성공</title>
+    <title>빌링키 발급</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 </head>
@@ -43,13 +42,12 @@ $responseJson = json_decode($response);
 <section>
     <?php
     if ($isSuccess) { ?>
-        <h1>결제 성공</h1>
-        <h3>상품명: 토스 티셔츠</h3>
+        <h1>빌링키 발급 성공</h1>
         <p>결과 데이터: <?php echo json_encode($responseJson, JSON_UNESCAPED_UNICODE); ?></p>
         <?php
     } else { ?>
-        <h1>결제 실패</h1>
-        <p><?php echo $responseJson->message ?></p>
+        <h1>빌링키 발급 실패</h1>
+        <p><?php echo $responseJson->mes패sage ?></p>
         <span>에러코드: <?php echo $responseJson->code ?></span>
         <?php
     }
